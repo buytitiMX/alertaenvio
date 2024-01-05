@@ -1,0 +1,1 @@
+window.addEventListener("DOMContentLoaded",(e=>{let n=document.querySelector('th:contains("Envío")');n&&(n.innerHTML="Envío. La paquetería asignada va a depender del peso, medidas y ubicación de entrega.")}));
