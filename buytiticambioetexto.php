@@ -31,21 +31,11 @@ function buytiticambioetexto_buytiticambioetexto_block_init() {
 }
 add_action( 'init', 'buytiticambioetexto_buytiticambioetexto_block_init' );
 
-function cambiar_texto_envio($label) {
-    // Verifica si estamos en la página de pago
-    if (is_page('pago')) {
-        // Reemplaza el texto "Envío"
-        $label = str_replace('Envío', 'Envío. La paquetería asignada va a depender del peso, medidas y ubicación de entrega.', $label);
-    }
-    return $label;
-}
-add_filter('woocommerce_shipping_package_name', 'cambiar_texto_envio');
-
 function mostrar_alerta_envio() {
     // Verifica si estamos en la página de pago
     if (is_page('pago')) {
         // Genera el código JavaScript para mostrar la alerta
-        echo '<script type="text/javascript">alert("Envío. La paquetería asignada va a depender del peso, medidas y ubicación de entrega.");</script>';
+        echo '<script type="text/javascript">alert("En ENVÍOS GRATUITOS, la paquetería asignada va depender del peso, medidas y ubicación de entrega.");</script>';
     }
 }
 add_action('wp_footer', 'mostrar_alerta_envio');
